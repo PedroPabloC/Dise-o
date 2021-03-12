@@ -1,0 +1,16 @@
+Irse a la clase "Listado", en el método "Buscar" para agregar la funcionalidad del correo: 
+Dado que ahora la última posición de la cadena quedará como el correo, gregar a la cadena que se muestra, en el iterador while, modelo.addElement(... +"|" + contacto[5]). 
+
+Hacer lo mismo en el método MostrarContactos, en el bucle While. Agregar la posición del correo para que se muestre también: agregar a cada modelo.addElement(+ "|" + contacto[5])
+
+
+
+1.- Es una forma de organizar información 
+
+
+2.- Tipo de Información y una manera de organización, que sería posición, tipos de entradas y salidas
+
+3.-
+Vector usual: Para guardar información y hacer búsquedas de una manera más ordenada
+
+Grafo: Representar datos de una mejor manera y manejarlos más eficientemente
