@@ -14,9 +14,9 @@ public class InfijoAPostfijoApp{
         ArrayList <String> salidas = new ArrayList<String>();
         
 
-
+        //Leer la cadena y onvertirla de infija a postfija
         ExpressionReader listaExpresiones = new ExpressionReader();
-        File example = new File(args[1]);
+        File example = new File(args[0]);
         listaExpresiones.fileReader(example);
         listaCadenas = listaExpresiones.getExpresiones();
         try{
@@ -36,10 +36,15 @@ public class InfijoAPostfijoApp{
                         cadenaPostfijo += cadenaInfijo.charAt(i);
                     
                     }else if(evaluador.isOperador(cadenaInfijo.charAt(i))){
-                        while(!pila.isEmpty() && (evaluador.getPrioridad(cadenaInfijo.charAt(i))<evaluador.getPrioridad(pila.peek()))){
-                            cadenaPostfijo += pila.pop();
+                        if(cadenaInfijo.charAt(i)== '*' && cadenaInfijo.charAt(i+1)=='*'){
+                            pila.push('^');
+                            i++;
+                        }else{
+                            while(!pila.isEmpty() && (evaluador.getPrioridad(cadenaInfijo.charAt(i))<evaluador.getPrioridad(pila.peek()))){
+                                cadenaPostfijo += pila.pop();
+                            }
+                            pila.push(cadenaInfijo.charAt(i));
                         }
-                        pila.push(cadenaInfijo.charAt(i));
                         
                     }else if(cadenaInfijo.charAt(i)==';'){
                         while(!pila.isEmpty()){

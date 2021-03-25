@@ -17,6 +17,8 @@ public class ExpressionWriter {
             archivo = new FileWriter("exp_postfijas.txt");
             escritor = new PrintWriter(archivo);
 
+
+            //Se evalua la expresión postfija
             for(String cadenaPostfijo: salidas){
                 Stack <Integer> enteros = new Stack<Integer>(30);
                 for(int j = 0; j<cadenaPostfijo.length(); j++){
@@ -31,16 +33,16 @@ public class ExpressionWriter {
                             resultado = ultimo + penultimo;
                             enteros.push(resultado);
                         }else if(cadenaPostfijo.charAt(j)=='-'){
-                            resultado = ultimo - penultimo;
+                            resultado = penultimo - ultimo;
                             enteros.push(resultado);
                         }else if(cadenaPostfijo.charAt(j)=='*'){
                             resultado = ultimo * penultimo;
                             enteros.push(resultado);
                         }else if(cadenaPostfijo.charAt(j)=='/'){
-                            resultado = ultimo/penultimo;
+                            resultado = penultimo/ultimo;
                             enteros.push(resultado);
                         }else{
-                            resultado = ultimo^penultimo;
+                            resultado = (int) Math.pow(penultimo, ultimo);
                             enteros.push(resultado);
                         }
                     }
