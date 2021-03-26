@@ -6,7 +6,6 @@
 package Modelo;
 import java.util.LinkedList;
 import java.util.Queue;
-import Modelo.Cliente;
 import java.util.Scanner;
 import Modelo.Caja;
 import Modelo.Cliente;
