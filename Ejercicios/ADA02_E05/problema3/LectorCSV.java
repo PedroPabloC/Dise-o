@@ -11,7 +11,7 @@ public class LectorCSV {
      * @return DoublyLinkedList
      */
     public DoublyLinkedList leerCSV(){
-        Path filePath = Paths.get("C:\\School\\Java Projects\\Trash\\Movie.csv");
+        Path filePath = Paths.get("Movie.csv");
         DoublyLinkedList listaPeliculas = new DoublyLinkedList();
         try {
              BufferedReader br = Files.newBufferedReader(filePath);

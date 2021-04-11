@@ -21,7 +21,6 @@ public class EscritorCSV {
             escritor = new PrintWriter(bw);
 
             DoublyLink current = lista.getFirst();
-            escritor.println(current.dData.toString());
             while(current!=null){
                 escritor.println(current.dData.toString());
                 current = current.next;
